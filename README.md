@@ -1,17 +1,10 @@
-# conversor_de_distancia
-
+# Conversor de Distância v1.0
 * Converte distâncias entre quilômetros e milhas.
+* O código solicita ao usuário que insira os valores de quilômetros e milhas e realiza as conversões correspondentes.
+* Solicita ao usuário que insira os valores de quilômetros e milhas.
+* Realiza as conversões e imprime os resultados.
  
- * O código solicita ao usuário que insira os valores de quilômetros e milhas e realiza as conversões correspondentes.
-
- * @version 1.0.0
- 
-
-
- * Solicita ao usuário que insira os valores de quilômetros e milhas.
- * Realiza as conversões e imprime os resultados.
- 
- 
+```JavaScript
 function converterDistancias() {
   // Solicitar ao usuário que insira os valores de quilômetros e milhas
   const kilometers = parseFloat(prompt("Insira o valor em quilômetros:"));
@@ -38,22 +31,18 @@ function converterDistancias() {
 
 // Executa a função para converter distâncias
 converterDistancias();
+```
 
-**Função "converterDistancias()"**
-
+## Função *converterDistancias*
 Esta função é responsável por solicitar ao usuário que insira os valores de quilômetros e milhas, realizar as conversões correspondentes e imprimir os resultados. Ela utiliza as seguintes etapas:
 
-Solicita ao usuário que insira o valor em quilômetros utilizando o método prompt().
-Solicita ao usuário que insira o valor em milhas utilizando o método prompt().
-Verifica se os valores inseridos são números válidos utilizando a função isNaN().
+Solicita ao usuário que insira o valor em quilômetros utilizando o método *prompt*.
+Solicita ao usuário que insira o valor em milhas utilizando o método *prompt*.
+Verifica se os valores inseridos são números válidos utilizando a função *isNaN*.
 Se os valores forem inválidos, exibe uma mensagem de erro no console.
 Caso contrário, realiza as conversões:
 Converte os quilômetros em milhas multiplicando o valor por 0.621371.
 Converte as milhas em quilômetros dividindo o valor por 0.621371.
 Imprime os resultados no console com formatação adequada.
-
-**Execução**
-
-No final do código, a função converterDistancias() é chamada para iniciar o processo de conversão. Isso permite que o código seja executado e as conversões sejam realizadas.
 
 Certifique-se de executar o código em um ambiente JavaScript adequado, como um navegador web ou um ambiente Node.js, para que o prompt funcione corretamente e permita a entrada do usuário.
