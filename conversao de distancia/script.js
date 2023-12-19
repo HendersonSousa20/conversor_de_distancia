@@ -1,26 +1,39 @@
 function converterDistancias() {
-  
-    const kilometers = parseFloat(prompt("Insira o valor em quilômetros:"));
-    const miles = parseFloat(prompt("Insira o valor em milhas:"));
-  
-    
-    if (isNaN(kilometers) || isNaN(miles)) {
-      console.log("Valores inválidos. Certifique-se de inserir números válidos.");
-    } else {
-      
-      const kilometersToMiles = kilometers * 0.621371;
-      const milesToKilometers = miles / 0.621371;
-  
-     
-      console.log("Conversões de distância");
-      console.log("-----------------------");
-      console.log(kilometers + " quilômetros são:");
-      console.log(kilometersToMiles.toFixed(2) + " milhas");
-      console.log("----");
-      console.log(miles + " milhas são:");
-      console.log(milesToKilometers.toFixed(2) + " quilômetros");
-    }
+  const opcao = parseInt(prompt("Escolha a direção da conversão:\n1. Quilômetros para Milhas\n2. Milhas para Quilômetros"));
+
+  if (opcao !== 1 && opcao !== 2) {
+    console.log("Opção inválida. Por favor, escolha 1 ou 2.");
+    return;
   }
-  
-  
-  converterDistancias();
+
+  const valor = parseFloat(prompt("Insira o valor:"));
+
+  if (isNaN(valor)) {
+    console.log("Valor inválido. Certifique-se de inserir um número válido.");
+    return;
+  }
+
+  const precisaoDecimal = parseInt(prompt("Insira a precisão decimal desejada para o resultado:"));
+
+  if (isNaN(precisaoDecimal) || precisaoDecimal < 0) {
+    console.log("Precisão decimal inválida. Certifique-se de inserir um número inteiro não negativo.");
+    return;
+  }
+
+  let resultado;
+
+  if (opcao === 1) {
+    const quilometrosParaMilhas = valor * 0.621371;
+    resultado = quilometrosParaMilhas.toFixed(precisaoDecimal) + " milhas";
+  } else {
+    const milhasParaQuilometros = valor / 0.621371;
+    resultado = milhasParaQuilometros.toFixed(precisaoDecimal) + " quilômetros";
+  }
+
+  console.log("Conversão de distância");
+  console.log("-----------------------");
+  console.log(valor + (opcao === 1 ? " quilômetros são:" : " milhas são:"));
+  console.log(resultado);
+}
+
+converterDistancias();
